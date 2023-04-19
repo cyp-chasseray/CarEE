@@ -4,7 +4,7 @@
     <title>Login Form</title>
 </head>
 <body>
-<h3>Inscription admin</h3>
+<h3>Inscription admin (design in progress)</h3>
 <form method="post" action="register">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required><br><br>

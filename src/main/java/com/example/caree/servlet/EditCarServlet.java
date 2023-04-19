@@ -38,7 +38,8 @@ public class EditCarServlet extends HttpServlet {
             String categoryName = req.getParameter("category");
             Category category = new CategoryDao().fetchOneByName(categoryName);
             int categoryId = (int) category.getId();
-            Post postToUpdate = new Post((long) id, name, content, price, categoryId);
+            String pictureUrl = req.getParameter("pictureUrl");
+            Post postToUpdate = new Post((long) id, name, content, price, categoryId, pictureUrl);
             new PostService().updatePost(id, postToUpdate);
             resp.sendRedirect(req.getContextPath() + "/secured");
         }

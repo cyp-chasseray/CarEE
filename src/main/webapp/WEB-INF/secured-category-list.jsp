@@ -20,13 +20,19 @@
       <div class="text-end">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="posts">Home</a>
+            <a class="nav-link active" aria-current="page" href="secured">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="categories">Category List</a>
+            <a class="nav-link active" aria-current="page" href="secured/categories">Category List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="login">Login</a>
+            <a class="nav-link active" aria-current="page" href="secured/create-car">Car Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="secured/create-category">Category Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="secured/logout">Logout</a>
           </li>
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -38,6 +44,14 @@
     </div>
   </nav>
 </header>
+
+<div class="create-category-container">
+  <button type="button" class="btn btn-success">
+    <a class = "btn-content" href="${pageContext.request.contextPath}/secured/create-category">
+      Create new category
+    </a>
+  </button>
+</div>
 
 <div class="container-cards">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-content-center">
@@ -52,58 +66,3 @@
     </c:forEach>
   </div>
 </div>
-
-<div class="three-texts">
-  <h1 class = "three-texts-header">Our Services</h1>
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class = "three-texts-texts">
-        <p class = "three-texts-content">AAAAAAA</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class = "three-texts-texts">
-        <p class = "three-texts-content">BBBBBBB</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class = "three-texts-texts">
-        <p class = "three-texts-content">CCCCCCC</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container category-container">
-  <div class="row">
-    <div class="col-md-6">
-      <p>AAAAAAAAA.</p>
-    </div>
-    <div class="col-md-6">
-      <p>Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.<br> AAAAAAAAAAAAAAAAAAAAAAA</p>
-    </div>
-  </div>
-</div>
-
-<div class="purchase-message-container">
-  <p class= "purchase-message-text">What are you waiting for? Purchase a Caree now</p>
-</div>
-<div class = "bottom-elements">
-  <div class = "bottom-singular">
-    <h3>Get in touch</h3>
-    <p>Phone: 00000000</p>
-    <p>Email: cccccc@ccc.fr</p>
-    <p>Fax: 00000000</p>
-  </div>
-  <div class = "bottom-singular">
-    <h3>Caree is an awesome website management tool</h3>
-    <p>Thank you for choosing Caree!</p>
-  </div>
-  <div class = "bottom-singular">
-    <h3>Caree inc</h3>
-    <p>France</p>
-    <p>02620</p>
-  </div>
-</div>
-</body>
-</html>

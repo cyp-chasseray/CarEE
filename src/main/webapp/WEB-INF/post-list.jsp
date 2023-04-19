@@ -1,3 +1,4 @@
+<%@ page import="com.example.caree.service.CategoryService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -41,17 +42,17 @@
 </header>
 
 
-<div class="container" id="card-container">
+<div class="container-cards">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-content-center">
     <c:forEach var="p" items="${posts}">
       <div class="col">
         <div class="card">
-          <img src="https://www.sauvageboris.fr/training/javaee/carEE/resources/cars/car_jaguar_f_pace.jpg" class="card-img-top" alt="${p.title}">
+          <img src=${p.pictureUrl} class="card-img-top" alt="${p.title}">
           <div class="card-body">
             <h5 class="card-title">${p.title}</h5>
-            <h5 class="card-text">Electrique</h5>
+            <h5 class="card-text">Electric</h5>
             <button type="button" class="btn btn-success">
-              <a href="${pageContext.request.contextPath}/details-car?id=${p.id}" style="color:white; text-decoration:none;">
+              <a class = "btn-content" href="${pageContext.request.contextPath}/details-car?id=${p.id}">
                 Details
               </a>
             </button>

@@ -11,7 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>This is car details page</h1>
+<h1>This is car details page (design in progress)</h1>
+<p>${post.pictureUrl}</p>
 <p>${post.title}</p>
 <p>${post.content}</p>
 <p>${post.price}</p>

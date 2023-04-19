@@ -11,7 +11,7 @@
   <title>Title</title>
 </head>
 <body>
-<h1>This is create car page</h1>
+<h1>This is the car creation page (design in progress)</h1>
 <form method="post" action="create-car">
 
   <label for="title">Car name:</label>
@@ -25,6 +25,9 @@
 
   <label for="category">Category:</label>
   <input type="text" id="category" name="category">
+
+  <label for="pictureUrl">Picture URL:</label>
+  <input type="text" id="pictureUrl" name="pictureUrl">
 
   <input type="submit" value="Submit">
 </form>

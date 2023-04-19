@@ -19,7 +19,7 @@ body {
     padding-left: 100px;
     padding-right: 100px;
 }
-#card-container {
+.container-cards {
     padding-bottom: 50px;
     padding-top:50px;
 }
@@ -130,4 +130,25 @@ body {
 
 #first-button {
     margin-top: 15px;
+}
+
+.create-car-container{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-category-container{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-content{
+    color:white;
+    text-decoration:none;
 }

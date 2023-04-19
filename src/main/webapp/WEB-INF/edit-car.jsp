@@ -29,6 +29,9 @@
   <label for="category">Category:</label>
   <input type="text" id="category" name="category" value="${category.name}">
 
+  <label for="pictureUrl">Picture URL:</label>
+  <input type="text" id="pictureUrl" name="pictureUrl" value="${post.pictureUrl}">
+
   <label for="choice">Deletion:</label>
   <input type="text" id="choice" name="choice" placeholder="type delete to delete">
 

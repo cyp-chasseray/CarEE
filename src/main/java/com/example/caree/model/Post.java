@@ -9,12 +9,13 @@ public class Post {
     private int categoryId;
     private String pictureUrl;
 
-    public Post(Long id, String title, String content, double price, int categoryId) {
+    public Post(Long id, String title, String content, double price, int categoryId, String pictureUrl) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.price = price;
         this.categoryId = categoryId;
+        this.pictureUrl = pictureUrl;
     }
 
 

@@ -16,11 +16,12 @@ public class PostDao implements GenericDAO<Post>{
     public void create(Post newPost)  {
         Connection connection = ConnectionManager.getINSTANCE();
         try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO car (name, description, price, categoryId) VALUES (?, ?, ?, ?);");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO car (name, description, price, categoryId, pictureUrl) VALUES (?, ?, ?, ?, ?);");
             statement.setString(1, newPost.getTitle());
             statement.setString(2, newPost.getContent());
             statement.setDouble(3, newPost.getPrice());
             statement.setLong(4, newPost.getCategoryId());
+            statement.setString(5, newPost.getPictureUrl());
             statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -32,7 +33,7 @@ public class PostDao implements GenericDAO<Post>{
         List<Post> listPost = new ArrayList<>();
         Connection connection = ConnectionManager.getINSTANCE();
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT id, name, description, price, categoryId FROM car;");
+            PreparedStatement statement = connection.prepareStatement("SELECT id, name, description, price, categoryId, pictureUrl FROM car;");
             ResultSet results = statement.executeQuery();
             while (results.next()) {
                 listPost.add(new Post(
@@ -40,7 +41,8 @@ public class PostDao implements GenericDAO<Post>{
                         results.getString("name"),
                         results.getString("description"),
                         results.getDouble("price"),
-                        results.getInt("categoryId")
+                        results.getInt("categoryId"),
+                        results.getString("pictureUrl")
                 ));
             }
             return listPost;
@@ -55,7 +57,7 @@ public class PostDao implements GenericDAO<Post>{
         Connection connection = ConnectionManager.getINSTANCE();
         Post post = null;
         try {
-            PreparedStatement statement = connection.prepareStatement("SELECT id, name, description, price, categoryId FROM car WHERE id = ?;");
+            PreparedStatement statement = connection.prepareStatement("SELECT id, name, description, price, categoryId, pictureUrl FROM car WHERE id = ?;");
             statement.setInt(1, id);
             ResultSet results = statement.executeQuery();
 
@@ -65,7 +67,8 @@ public class PostDao implements GenericDAO<Post>{
                         results.getString("name"),
                         results.getString("description"),
                         results.getDouble("price"),
-                        results.getInt("categoryId")
+                        results.getInt("categoryId"),
+                        results.getString("pictureUrl")
                 )
                 );
 
@@ -80,12 +83,13 @@ public class PostDao implements GenericDAO<Post>{
     public void update(int id, Post postToUpdate) {
         Connection connection = ConnectionManager.getINSTANCE();
         try {
-            PreparedStatement statement = connection.prepareStatement("UPDATE car SET name = ?, description = ?, price = ?, categoryId = ? WHERE id = ?;");
+            PreparedStatement statement = connection.prepareStatement("UPDATE car SET name = ?, description = ?, price = ?, categoryId = ?, pictureUrl=? WHERE id = ?;");
             statement.setString(1, postToUpdate.getTitle());
             statement.setString(2, postToUpdate.getContent());
             statement.setDouble(3, postToUpdate.getPrice());
             statement.setInt(4, postToUpdate.getCategoryId());
-            statement.setInt(5, id);
+            statement.setString(5, postToUpdate.getPictureUrl());
+            statement.setInt(6, id);
             statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);

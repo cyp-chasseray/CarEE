@@ -26,9 +26,10 @@ public class CreateCarServlet extends HttpServlet {
             String content = req.getParameter("content");
             double price = Double.parseDouble(req.getParameter("price"));
             String categoryName = req.getParameter("category");
+            String pictureUrl = req.getParameter("pictureUrl");
             Category category = new CategoryDao().fetchOneByName(categoryName);
             int categoryId = (int) category.getId();
-            Post newPost = new Post(10000L,name, content, price, categoryId);
+            Post newPost = new Post(10000L,name, content, price, categoryId, pictureUrl);
             new PostService().createPost(newPost);
             resp.sendRedirect(req.getContextPath() + "/secured");
         }

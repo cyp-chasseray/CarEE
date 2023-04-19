@@ -11,7 +11,7 @@
   <title>Title</title>
 </head>
 <body>
-<h1>This is create category page</h1>
+<h1>This is the category creation page (design in progress)</h1>
 <form method="post" action="create-category">
 
   <label for="name">Category name:</label>

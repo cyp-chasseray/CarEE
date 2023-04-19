@@ -6,56 +6,66 @@
     <title>This is a title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        <%@include file="/css/styles.css" %>
+    </style>
 </head>
 <body>
 
 <header class="mb-4">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <img src="https://img.icons8.com/plasticine/64/null/blog.png"/>
-            <a class="navbar-brand" href="#">CarEE</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div>
+                <img src="https://www.sauvageboris.fr/training/javaee/carEE/resources/logo/logo_car_60.png"/>
+            </div>
+            <div class="text-end">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="posts">Home</a>
+                        <a class="nav-link active" aria-current="page" href="secured">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="add-post">Add post</a>
+                        <a class="nav-link active" aria-current="page" href="secured/categories">Category List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="delete-post">Delete post</a>
+                        <a class="nav-link active" aria-current="page" href="secured/create-car">Car Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="update-post">Update post</a>
+                        <a class="nav-link active" aria-current="page" href="secured/create-category">Category Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="secured/logout">Logout</a>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
                     </li>
                 </ul>
-                <form class="d-flex" role="search" action="${pageContext.request.contextPath}/" method="get">
-                    <input name="searchName" class="form-control me-2" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
 </header>
 
-<div class="container">
-    <h1>Posts</h1>
+<div class="create-car-container">
+    <button type="button" class="btn btn-success">
+        <a class = "btn-content" href="${pageContext.request.contextPath}/secured/create-car">
+            Create new car
+        </a>
+    </button>
+</div>
+
+<div class="container-cards">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-content-center">
         <c:forEach var="p" items="${posts}">
             <div class="col">
                 <div class="card">
-                    <img src="${p.pictureUrl}" class="card-img-top" alt="${p.title}">
+                    <img src=${p.pictureUrl} class="card-img-top" alt="${p.title}">
                     <div class="card-body">
                         <h5 class="card-title">${p.title}</h5>
                         <p class="card-text">${p.content}</p>
-                        <p class="post-number">Post number ${p.id}</p>
+                        <p class="post-number">Electric</p>
                         <button type="button" class="btn btn-success">
-                            <a href="${pageContext.request.contextPath}/details-car?id=${p.id}" style="color:white; text-decoration:none;">
+                            <a class = "btn-content" href="${pageContext.request.contextPath}/details-car?id=${p.id}">
                                 Details
                             </a>
                         </button>
