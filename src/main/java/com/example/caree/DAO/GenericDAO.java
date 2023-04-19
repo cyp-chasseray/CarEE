@@ -9,6 +9,6 @@ public interface GenericDAO<T> {
 
     public T fetchOne(int id);
 
-    public void update(int id);
+    public void update(int id, T object);
     public void delete(int id);
 }

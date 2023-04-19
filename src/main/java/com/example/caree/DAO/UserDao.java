@@ -67,9 +67,29 @@ public class UserDao implements GenericDAO<User>{
         return user;
     }
 
-    @Override
-    public void update(int id) {
+    public User fetchOneByUserName(String userName) {
+        Connection connection = ConnectionManager.getINSTANCE();
+        User user = null;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT id, userName, password FROM user WHERE userName = ?;");
+            statement.setString(1, userName);
+            ResultSet results = statement.executeQuery();
 
+            if (results.next()) {
+                user = (new User(
+                        results.getString("userName"),
+                        results.getString("password")
+                )
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
+
+    @Override
+    public void update(int id, User user) {
     }
 
     @Override

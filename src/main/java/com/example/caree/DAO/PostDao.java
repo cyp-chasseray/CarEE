@@ -77,7 +77,19 @@ public class PostDao implements GenericDAO<Post>{
     }
 
     @Override
-    public void update(int id) {
+    public void update(int id, Post postToUpdate) {
+        Connection connection = ConnectionManager.getINSTANCE();
+        try {
+            PreparedStatement statement = connection.prepareStatement("UPDATE car SET name = ?, description = ?, price = ?, categoryId = ? WHERE id = ?;");
+            statement.setString(1, postToUpdate.getTitle());
+            statement.setString(2, postToUpdate.getContent());
+            statement.setDouble(3, postToUpdate.getPrice());
+            statement.setInt(4, postToUpdate.getCategoryId());
+            statement.setInt(5, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

@@ -25,9 +25,9 @@ public class PostService {
         postDao.delete(id);
     }
 
-    public void updatePost(int id) {
-//        PostDao postDao = new PostDao();
-//        postDao.update(id, content);
+    public void updatePost(int id, Post post) {
+        PostDao postDao = new PostDao();
+        postDao.update(id, post);
     }
 
 

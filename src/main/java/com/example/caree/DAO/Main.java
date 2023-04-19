@@ -14,5 +14,6 @@ public class Main {
         postDao.create(post);
         Post testPost = postDao.fetchOne(2);
         System.out.println(testPost.getPrice());
+
     }
 }

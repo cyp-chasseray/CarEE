@@ -67,8 +67,30 @@ public class CategoryDao implements GenericDAO<Category>{
         return category;
     }
 
+    public Category fetchOneByName(String name) {
+        Connection connection = ConnectionManager.getINSTANCE();
+        Category category = null;
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT id, name FROM category WHERE name = ?;");
+            statement.setString(1, name);
+            ResultSet results = statement.executeQuery();
+
+            if (results.next()) {
+                category = (new Category(
+                        results.getLong("id"),
+                        results.getString("name")
+                )
+                );
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return category;
+    }
+
     @Override
-    public void update(int id) {
+    public void update(int id, Category category) {
 
     }
 

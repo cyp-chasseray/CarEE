@@ -8,7 +8,6 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-
 <header class="mb-4">
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
@@ -44,20 +43,13 @@
 </header>
 
 <div class="container">
-  <h1>Posts</h1>
+  <h1>Categories</h1>
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 align-content-center">
-    <c:forEach var="p" items="${posts}">
+    <c:forEach var="c" items="${categories}">
       <div class="col">
         <div class="card">
-          <img src="${p.pictureUrl}" class="card-img-top" alt="${p.title}">
           <div class="card-body">
-            <h5 class="card-title">${p.title}</h5>
-            <p class="card-text">${p.content}</p>
-            <button type="button" class="btn btn-success">
-              <a href="${pageContext.request.contextPath}/details-car?id=${p.id}" style="color:white; text-decoration:none;">
-                Details
-              </a>
-            </button>
+            <h5 class="card-title">${c.name}</h5>
           </div>
         </div>
       </div>
