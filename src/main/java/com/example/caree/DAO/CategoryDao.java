@@ -1,9 +1,6 @@
 package com.example.caree.DAO;
-
 import com.example.caree.connexion.ConnectionManager;
 import com.example.caree.model.Category;
-import com.example.caree.model.Post;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

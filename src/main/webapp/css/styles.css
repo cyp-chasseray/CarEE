@@ -1,0 +1,133 @@
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+    color: #1ed3a6;
+    font-weight: bold;
+}
+.category-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.btn-success {
+    background-color: #1ed3a6;
+    color: white;
+}
+body {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#card-container {
+    padding-bottom: 50px;
+    padding-top:50px;
+}
+#two-text-container {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.three-texts {
+    background-color: #f2f2f2;
+    padding: 40px;
+}
+
+.three-texts-header {
+    text-align: center;
+    color: black;
+}
+
+.three-texts-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.three-texts-content {
+    color: black;
+    margin-top: 10px
+}
+
+.purchase-message-container {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.purchase-message-container-green {
+    background-color: #1ed3a6;
+    color: white;
+    padding: 10px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase-message-text {
+    font-weight: bold;
+    text-align: center
+}
+
+.back-image-header {
+    background-image: url('https://www.sauvageboris.fr/training/javaee/carEE/resources/img/sunset.jpg');
+    height: 200px; background-size: cover; position: relative;
+}
+.back-image-title {
+    color: white;
+    font-size: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.back-image-content{
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-elements {
+    background-color: #f2f2f2;
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.bottom-singular {
+    width: 33.33%;
+    text-align: center;
+}
+
+.login-box {
+    background-image: url("https://www.sauvageboris.fr/training/javaee/carEE/resources/img/blur.jpg");
+    background-size: cover;
+    position: relative;
+    color:white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#first-button {
+    margin-top: 15px;
+}
